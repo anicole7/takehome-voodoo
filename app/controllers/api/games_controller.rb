@@ -19,6 +19,24 @@ class Api::GamesController < ActionController::API
     render json: game
   end
 
+  def search
+    game_list = []
+    # get non empty fields
+    params_check = {name: params[:name], platform: params[:platform]}.compact_blank
+
+    Game.all.each do |g|
+      cond = true
+
+      params_check.keys.each do |pck|     
+        cond = false if !g.public_send(pck).include?(params_check[pck])
+      end
+
+      game_list << g if cond
+    end
+
+    render json: game_list.count > 0 ? game_list : Game.all
+  end
+
   private
 
   def game_attributes
