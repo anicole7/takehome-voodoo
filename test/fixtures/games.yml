@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  publisher_id: MyString
+  name: MyString
+  platform: MyString
+  store_id: MyString
+  bundle_id: MyString
+  app_version: MyString
+  is_published: false
+
+two:
+  publisher_id: MyString
+  name: MyString
+  platform: MyString
+  store_id: MyString
+  bundle_id: MyString
+  app_version: MyString
+  is_published: false

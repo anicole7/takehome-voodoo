@@ -1,0 +1,70 @@
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20220502195601)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "publisher_id" varchar, "name" varchar, "platform" varchar, "store_id" varchar, "bundle_id" varchar, "app_version" varchar, "is_published" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220502195601"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-04 21:04:11.871628"], ["updated_at", "2022-05-04 21:04:11.871628"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "ios"], ["store_id", "1345968745"], ["bundle_id", "com.h8games.falldown"], ["app_version", "2.4.2"], ["is_published", 1], ["created_at", "2022-05-04 21:04:11.893694"], ["updated_at", "2022-05-04 21:04:11.893694"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "android"], ["store_id", "com.h8games.helixjump"], ["bundle_id", "com.h8games.helixjump"], ["app_version", "2.4.4"], ["is_published", 1], ["created_at", "2022-05-04 21:04:11.897270"], ["updated_at", "2022-05-04 21:04:11.897270"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Swing Rider"], ["platform", "ios"], ["store_id", "1441881688"], ["bundle_id", "com.semeevs.swingrider"], ["app_version", "1.3"], ["is_published", 1], ["created_at", "2022-05-04 21:04:11.900792"], ["updated_at", "2022-05-04 21:04:11.900792"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Swing Rider"], ["platform", "android"], ["store_id", "com.swing.rope"], ["bundle_id", "com.swing.rope"], ["app_version", "1.0.3"], ["is_published", 1], ["created_at", "2022-05-04 21:04:11.904550"], ["updated_at", "2022-05-04 21:04:11.904550"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "c92d2e46-4f85-485c-b2a2-591d7857c93e"], ["name", "Car Crash!"], ["platform", "ios"], ["store_id", "1450509345"], ["bundle_id", "com.andrew.stunts"], ["app_version", "1.3.1"], ["is_published", 1], ["created_at", "2022-05-04 21:04:11.908855"], ["updated_at", "2022-05-04 21:04:11.908855"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-05-04 23:04:16 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html within layouts/application
+  Rendered static/index.html within layouts/application (Duration: 1.0ms | Allocations: 272)
+  Rendered layout layouts/application.html.erb (Duration: 81.6ms | Allocations: 35560)
+Completed 200 OK in 91ms (Views: 88.0ms | ActiveRecord: 0.0ms | Allocations: 38724)
+
+
+Started GET "/api/games" for ::1 at 2022-05-04 23:04:17 +0200
+Processing by Api::GamesController#index as HTML
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/games_controller.rb:3:in `index'
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 2.1ms | Allocations: 8665)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-14 04:35:35 +0100
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/index.html within layouts/application
+  Rendered static/index.html within layouts/application (Duration: 2.6ms | Allocations: 380)
+  Rendered layout layouts/application.html.erb (Duration: 546.7ms | Allocations: 89945)
+Completed 200 OK in 596ms (Views: 561.5ms | ActiveRecord: 0.0ms | Allocations: 94339)
+
+
+Started GET "/api/games" for ::1 at 2023-02-14 04:35:36 +0100
+Processing by Api::GamesController#index as HTML
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/games_controller.rb:3:in `index'
+Completed 200 OK in 29ms (Views: 23.4ms | ActiveRecord: 1.6ms | Allocations: 8875)
+
+

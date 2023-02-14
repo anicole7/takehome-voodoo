@@ -1,0 +1,99 @@
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "games"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "publisher_id" varchar, "name" varchar, "platform" varchar, "store_id" varchar, "bundle_id" varchar, "app_version" varchar, "is_published" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220502195601)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-05-04 21:04:28.204538"], ["updated_at", "2022-05-04 21:04:28.204538"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "dd00a42eb74671e45e5dec6009e2478e1c5d583d"], ["created_at", "2022-05-04 21:04:28.209157"], ["updated_at", "2022-05-04 21:04:28.209157"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "games";
+INSERT INTO "games" ("id", "publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 0, '2022-05-04 21:04:28.288080', '2022-05-04 21:04:28.288080');
+INSERT INTO "games" ("id", "publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 0, '2022-05-04 21:04:28.288080', '2022-05-04 21:04:28.288080')[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+ArticlesControllerTest: test_create
+-----------------------------------
+  [1m[36mGame Delete All (0.4ms)[0m  [1m[31mDELETE FROM "games"[0m
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+Started POST "/api/games" for 127.0.0.1 at 2022-05-04 23:04:28 +0200
+Processing by Api::GamesController#create as JS
+  Parameters: {"game"=>{"publisher_id"=>"fda4848f-9fe6-4703-8f66-544cc146f1ae", "name"=>"Helix Jump", "platform"=>"ios", "store_id"=>"1345968745", "bundle_id"=>"com.h8games.falldown", "app_version"=>"2.4.2", "is_published"=>"true"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.2ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "ios"], ["store_id", "1345968745"], ["bundle_id", "com.h8games.falldown"], ["app_version", "2.4.2"], ["is_published", 1], ["created_at", "2022-05-04 21:04:28.462965"], ["updated_at", "2022-05-04 21:04:28.462965"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 6739)
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+ArticlesControllerTest: test_update
+-----------------------------------
+  [1m[36mGame Delete All (0.3ms)[0m  [1m[31mDELETE FROM "games"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.1ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "ios"], ["store_id", "1345968745"], ["bundle_id", "com.h8games.falldown"], ["app_version", "2.4.2"], ["is_published", 1], ["created_at", "2022-05-04 21:04:28.470101"], ["updated_at", "2022-05-04 21:04:28.470101"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+Started PUT "/api/games/980190963" for 127.0.0.1 at 2022-05-04 23:04:28 +0200
+Processing by Api::GamesController#update as JS
+  Parameters: {"id"=>"980190963", "game"=>{"platform"=>"android"}}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Update (0.2ms)[0m  [1m[33mUPDATE "games" SET "platform" = ?, "updated_at" = ? WHERE "games"."id" = ?[0m  [["platform", "android"], ["updated_at", "2022-05-04 21:04:28.475856"], ["id", 980190963]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1789)
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+ArticlesControllerTest: test_delete
+-----------------------------------
+  [1m[36mGame Delete All (0.4ms)[0m  [1m[31mDELETE FROM "games"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.1ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "ios"], ["store_id", "1345968745"], ["bundle_id", "com.h8games.falldown"], ["app_version", "2.4.2"], ["is_published", 1], ["created_at", "2022-05-04 21:04:28.481258"], ["updated_at", "2022-05-04 21:04:28.481258"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+Started DELETE "/api/games/980190963" for 127.0.0.1 at 2022-05-04 23:04:28 +0200
+Processing by Api::GamesController#destroy as JS
+  Parameters: {"id"=>"980190963"}
+  [1m[36mGame Load (0.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = ? LIMIT ?[0m  [["id", 980190963], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Destroy (0.1ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = ?[0m  [["id", 980190963]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 574)
+  [1m[36mGame Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "games"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+ArticlesControllerTest: test_index
+----------------------------------
+  [1m[36mGame Delete All (0.4ms)[0m  [1m[31mDELETE FROM "games"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mGame Create (0.1ms)[0m  [1m[32mINSERT INTO "games" ("publisher_id", "name", "platform", "store_id", "bundle_id", "app_version", "is_published", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["publisher_id", "fda4848f-9fe6-4703-8f66-544cc146f1ae"], ["name", "Helix Jump"], ["platform", "ios"], ["store_id", "1345968745"], ["bundle_id", "com.h8games.falldown"], ["app_version", "2.4.2"], ["is_published", 1], ["created_at", "2022-05-04 21:04:28.489423"], ["updated_at", "2022-05-04 21:04:28.489423"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/games" for 127.0.0.1 at 2022-05-04 23:04:28 +0200
+Processing by Api::GamesController#index as JS
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 532)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
