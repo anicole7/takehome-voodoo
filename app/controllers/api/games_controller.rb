@@ -2,6 +2,9 @@ class Api::GamesController < ActionController::API
   require 'uri'
   require 'net/http'
 
+  $top100IosGames = "https://interview-marketing-eng-dev.s3.eu-west-1.amazonaws.com/ios.top100.json"
+  $top100AndroidGames = "https://interview-marketing-eng-dev.s3.eu-west-1.amazonaws.com/android.top100.json"
+
   def index
     render json: Game.all
   end
@@ -41,13 +44,8 @@ class Api::GamesController < ActionController::API
   end
 
   def populate 
-    urls = [
-      "https://interview-marketing-eng-dev.s3.eu-west-1.amazonaws.com/ios.top100.json",
-      "https://interview-marketing-eng-dev.s3.eu-west-1.amazonaws.com/android.top100.json"
-    ]
-
     begin
-      urls.each do |url|
+      [$top100IosGames, $top100AndroidGames].each do |url|
         content = JSON.parse(Net::HTTP.get(URI.parse(url)))
         content.each do |c|
           Game.create(
