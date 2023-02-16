@@ -60,11 +60,29 @@ Many other applications at Voodoo will use consume this API.
 We are planning to put this project in production. According to you, what are the missing pieces to make this project production ready?
 Please elaborate an action plan.
 
+For me there are 3 main steps in order to put this project in production. The first one would be to setup environments (development/preproduction/production) for further developments.
+The second one is the addition of functions and continous integration tests (rspec/circleci for example) to minimize regression on further deployments and assert code maintanability.
+Finally add deployments tools (automatisation) though not mandatory but a great plus.
+
 #### Question 2:
 Let's pretend our data team is now delivering new files every day into the S3 bucket, and our service needs to ingest those files every day through the populate API. Could you describe a suitable solution to automate this?
 Feel free to propose architectural changes.
 
+I'd first move the function populate to a service dedicated to these game files import. I think it needs further developments too, like :
+- check if a project is already in the DB
+- if it is (had values been updated ?)
+
+For the automatisation we could put in place a server running jobs or a cron to run rake task at a sepcified hour. 
+
 #### Question 3:
 Both the current database schema and the files dropped in the S3 bucket are not optimal.
 How would you improve them?
+
+There is probably a lot of improvment that could be done but currently most fields are string and it seems inappropriate to me (especially concerning _id fields) so I would start by :
+
+- add a custom_id to games corresponding to the id field in S3 files. This way we could update a game data (its version if it changed for example) and prevent multiple record of the same game. The other way to do so would be to force the id of a new game record to be equal to the one of the S3 files but I'd prefer to simply add a custom_id.
+
+- add more tables such as Publisher and set a foreign key to Games so that we can have a proper publisher_id
+
+I don't know how much customisation can be done on S3 files but we have a lot of unused data so maybe reduce the file size to what we really need in order to achieve the import.
 
